@@ -39,6 +39,7 @@ artistiPresenti.forEach(artista => {
     // recupero l'id
     //ottengo il nome da cercare e l'id
     let nomeArtista = artista.id;
+    console.log(nomeArtista);
     document.getElementById( nomeArtista).classList.remove('d-none');
     // const url = `https://striveschool-api.herokuapp.com/api/deezer/search?q=${input}`;
 
@@ -50,11 +51,11 @@ artistiPresenti.forEach(artista => {
             // vado a puntare il container di eminem
             const artistiContainer = document.getElementById(nomeArtista + 'Section');
             const albums = data.data;
+            console.log(albums);
 
             albums.forEach(song => {
                           let cards = document.createElement('div');
 
-            cards.classList.add('Card-album');
 
                 cards.innerHTML = `<div class="d-flex flex-column justify-content-center align-items-center my-3">
                                    <img src=${song.album.cover} alt=${song.title}>
@@ -71,6 +72,5 @@ artistiPresenti.forEach(artista => {
             console.error('fratm si è rotto tutto!');
         })
 })
-
 
 
